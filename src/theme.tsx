@@ -4,13 +4,13 @@ const theme = extendTheme({
   styles: {
     global: {
       '*': {
-        'box-sizing': 'border-box',
+        boxSizing: 'border-box',
       },
       'html,body,#root': {
         height: '100%',
       },
       ul: {
-        'list-style-type': 'none',
+        listStyleType: 'none',
       },
     },
   },
