@@ -1,0 +1,95 @@
+import React from 'react';
+
+// Icons
+
+import {
+  HiOutlineHome,
+  HiOutlineHashtag,
+  HiOutlineBell,
+  HiOutlineMail,
+  HiOutlineBookmark,
+  HiOutlineMenuAlt2,
+  HiOutlineUser,
+  HiOutlineDotsCircleHorizontal,
+  HiDotsHorizontal,
+} from 'react-icons/hi';
+
+// Chakra-ui
+
+import { Stack, Text } from '@chakra-ui/layout';
+import { Button } from '@chakra-ui/button';
+import Icon from '@chakra-ui/icon';
+import NavLink from './NavLink';
+import TweetButton from './TweetButton';
+import HomeButton from './HomeButton';
+import ProfilePic from '../../components/ProfilePic';
+
+const Nav = () => (
+  <Stack
+    as="nav"
+    borderInlineEnd="1px"
+    borderColor="gray.100"
+    height="100%"
+    width="260px"
+    justifyContent="space-between"
+    paddingBlock={2}
+  >
+    <Stack
+      as="ul"
+      paddingInlineEnd={8}
+      justify="space-around"
+      alignItems="flex-start"
+    >
+      <HomeButton />
+      <NavLink icon={HiOutlineHome} text="Home" />
+      <NavLink icon={HiOutlineHashtag} text="Explore" />
+      <NavLink icon={HiOutlineBell} text="Notifications" />
+      <NavLink icon={HiOutlineMail} text="Messages" />
+      <NavLink icon={HiOutlineBookmark} text="Bookmarks" />
+      <NavLink icon={HiOutlineMenuAlt2} text="Lists" />
+      <NavLink icon={HiOutlineUser} text="Profile" />
+      <NavLink icon={HiOutlineDotsCircleHorizontal} text="More" />
+      <TweetButton />
+
+    </Stack>
+
+    <Stack
+      paddingInlineEnd={3}
+    >
+      <Button
+        borderRadius="full"
+        bg="transparent"
+        paddingInline={2}
+        paddingBlock={8}
+        _hover={{
+          bg: 'gray.200',
+        }}
+      >
+        <Stack
+          direction="row"
+          align="center"
+          justify="flex-start"
+          width="100%"
+        >
+          <Stack>
+            <ProfilePic size={10} />
+          </Stack>
+          <Stack
+            justify="space-around"
+            align="flex-start"
+            spacing={1}
+          >
+            <Text>Kitten</Text>
+            <Text fontSize={14} color="gray.500">@CatLover</Text>
+          </Stack>
+        </Stack>
+        <Stack>
+          <Icon as={HiDotsHorizontal} boxSize={4} />
+        </Stack>
+      </Button>
+    </Stack>
+  </Stack>
+
+);
+
+export default Nav;
