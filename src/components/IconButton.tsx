@@ -2,20 +2,28 @@ import { Button } from '@chakra-ui/button';
 import Icon from '@chakra-ui/icon';
 import React from 'react';
 
-const IconButton = ({ icon, color, size } : {icon:any, color:string, size:number}) => (
+const IconButton = ({ width, height, ...props }: {width: number, height: number}) => (
   <Button
-    padding={3}
+    padding={0}
     borderRightRadius="full"
     borderLeftRadius="full"
     transition="ease-in-out"
     transitionProperty="all"
     transitionDuration="100ms"
+    minWidth={width}
+    height={height}
     bg="transparent"
     _hover={{
-      bg: 'gray.200',
+      bg: 'gray.500',
+    }}
+    _focus={{
+      outlineWidth: '1px',
+      outlineColor: 'blue.500',
+      outlineOffset: '-1px',
     }}
   >
-    <Icon as={icon} color={color} boxSize={size} />
+    <Icon {...props} />
+    {/* <Icon as={icon} color={color} boxSize={size} /> */}
   </Button>
 );
 
