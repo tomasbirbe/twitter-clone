@@ -1,7 +1,10 @@
 import React from 'react';
+
+// Chakra-ui
+
 import { Button } from '@chakra-ui/button';
 
-const TwButton = (props: any) => (
+const TwButton = ({ ...props }: any) => (
   <Button
     {...props}
     type="button"
