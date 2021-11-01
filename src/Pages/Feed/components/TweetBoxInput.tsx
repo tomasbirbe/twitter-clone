@@ -19,6 +19,9 @@ const TweetInput = ({ whoCanReplyButton, setWhoCanReplyButton }:any) => {
   return (
     <Stack
       spacing={1}
+      borderBlockEnd={whoCanReplyButton ? '1px' : 'none'}
+      borderColor="gray.100"
+      paddingBlockEnd={3}
     >
       <Stack direction="row" align="center" justify="center">
         <Textarea

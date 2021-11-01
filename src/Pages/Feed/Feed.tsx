@@ -17,8 +17,15 @@ const Feed = () => (
     maxWidth="600px"
   >
     <FeedHeader />
-    <Stack as="section">
+    <Stack as="section" spacing={0}>
       <TweetBox />
+      <Tweet />
+      <Tweet />
+      <Tweet />
+      <Tweet />
+      <Tweet />
+      <Tweet />
+      <Tweet />
       <Tweet />
     </Stack>
   </Stack>

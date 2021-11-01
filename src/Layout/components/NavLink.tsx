@@ -4,11 +4,22 @@ import { Link } from 'react-router-dom';
 // Chakra-ui
 
 import Icon from '@chakra-ui/icon';
-import { Stack, Text } from '@chakra-ui/layout';
+import { Box, Stack, Text } from '@chakra-ui/layout';
 
 const NavLink = ({ icon, text } : {icon:any, text:String}) => (
   <li>
-    <Link to="/">
+    <Box
+      as={Link}
+      to="/"
+      borderRightRadius="full"
+      borderLeftRadius="full"
+      transitionProperty="all"
+      transitionDuration="500ms"
+      _focus={{
+        outlineColor: 'gray.500',
+        outlineWidth: '1px',
+      }}
+    >
       <Stack
         direction="row"
         spacing={4}
@@ -29,7 +40,7 @@ const NavLink = ({ icon, text } : {icon:any, text:String}) => (
         <Icon as={icon} boxSize={7} />
         <Text fontSize={21}>{text}</Text>
       </Stack>
-    </Link>
+    </Box>
   </li>
 );
 
