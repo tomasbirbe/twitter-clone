@@ -11,11 +11,7 @@ import FeedHeader from './components/FeedHeader';
 import Tweet from './components/Tweet';
 
 const Feed = () => (
-  <Stack
-    as="main"
-    width="100%"
-    maxWidth="600px"
-  >
+  <>
     <FeedHeader />
     <Stack as="section" spacing={0}>
       <TweetBox />
@@ -28,7 +24,7 @@ const Feed = () => (
       <Tweet />
       <Tweet />
     </Stack>
-  </Stack>
+  </>
 );
 
 export default Feed;

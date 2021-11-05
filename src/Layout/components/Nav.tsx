@@ -24,15 +24,15 @@ import TwitterButton from '../../components/TwitterButton';
 import HomeButton from './HomeButton';
 import ProfilePic from '../../components/ProfilePic';
 
-const Nav = () => (
+const Nav = ({ ...props }: any) => (
   <Stack
+    {...props}
     as="nav"
     borderInlineEnd="1px"
     borderColor="gray.100"
     height="100%"
-    width="260px"
     justifyContent="space-between"
-    paddingBlock={2}
+    paddingBlock={1}
   >
     <Stack
       as="ul"

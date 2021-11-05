@@ -39,11 +39,11 @@ const Tweet = () => (
               <Text fontWeight="bold">Kitten</Text>
               <Text fontWeight="light">@CatLover - 25m</Text>
             </Stack>
-            <IconButton>
-              <Icon as={RiMoreFill} size={7} />
+            <IconButton size="25px">
+              <Icon as={RiMoreFill} />
             </IconButton>
 
-          </Stack>  
+          </Stack>
           {/* Tweet */}
           <Stack>
             <Text lineHeight="20px">

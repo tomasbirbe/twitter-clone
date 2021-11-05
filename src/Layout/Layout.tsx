@@ -12,9 +12,11 @@ import Aside from './components/Aside';
 const App = ({ children } : {children: any}) => (
   <Container maxW="container.xl" height="100%">
     <Stack direction="row" height="100%" width="100%" spacing={0}>
-      <Nav />
-      {children}
-      <Aside />
+      <Nav width="290px" />
+      <Stack as="main" width="670px">
+        {children}
+      </Stack>
+      <Aside width="400px" />
     </Stack>
   </Container>
 );

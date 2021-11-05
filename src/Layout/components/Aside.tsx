@@ -4,12 +4,19 @@ import { Stack } from '@chakra-ui/layout';
 import { FiSearch } from 'react-icons/fi';
 import React from 'react';
 
-const Aside = () => (
-  <Stack as="aside">
+const Aside = ({ ...props }:any) => (
+  <Stack as="aside" width="full" {...props}>
     {/* Header */}
-    <Stack borderRadius="full" direction="row" align="center">
+    <Stack
+      borderRadius="full"
+      direction="row"
+      align="center"
+      justify="center"
+      bg="gray.100"
+      paddingInline={4}
+    >
       <Icon as={FiSearch} />
-      <Input placeholder="Search Twitter" />
+      <Input placeholder="Search Twitter" borderRadius="full" border="none" _focus={{}} _hover={{}} />
     </Stack>
 
     {/* Content: What's happening */}
