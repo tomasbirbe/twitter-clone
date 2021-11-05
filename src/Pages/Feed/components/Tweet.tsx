@@ -40,7 +40,7 @@ const Tweet = () => (
             </Stack>
             <IconButton size={7} as={RiMoreFill} />
 
-          </Stack>
+          </Stack>  
           {/* Tweet */}
           <Stack>
             <Text>
