@@ -10,6 +10,7 @@ import { HiOutlineSparkles } from 'react-icons/hi';
 
 // Components
 
+import Icon from '@chakra-ui/icon';
 import IconButton from '../../../components/IconButton';
 
 const FeedHeader = () => (
@@ -25,7 +26,9 @@ const FeedHeader = () => (
     paddingBlock={2}
   >
     <Text fontWeight="bold" fontSize={20}>Home</Text>
-    <IconButton as={HiOutlineSparkles} color="black" boxSize={5} />
+    <IconButton>
+      <Icon as={HiOutlineSparkles} color="black" boxSize={5} />
+    </IconButton>
   </Stack>
 );
 

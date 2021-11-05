@@ -20,7 +20,7 @@ import { Stack, Text } from '@chakra-ui/layout';
 import { Button } from '@chakra-ui/button';
 import Icon from '@chakra-ui/icon';
 import NavLink from './NavLink';
-import TwButton from '../../components/TwButton';
+import TwitterButton from '../../components/TwitterButton';
 import HomeButton from './HomeButton';
 import ProfilePic from '../../components/ProfilePic';
 
@@ -51,7 +51,7 @@ const Nav = () => (
       <NavLink icon={HiOutlineUser} text="Profile" />
       <NavLink icon={HiOutlineDotsCircleHorizontal} text="More" />
       <Stack width="100%" paddingBlockStart={2}>
-        <TwButton
+        <TwitterButton
           fontSize={18}
           color="white"
           bg="blue.500"
@@ -62,7 +62,7 @@ const Nav = () => (
         >
           Tweet
 
-        </TwButton>
+        </TwitterButton>
       </Stack>
 
     </Stack>

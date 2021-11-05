@@ -1,9 +1,9 @@
 import { Button } from '@chakra-ui/button';
-import Icon from '@chakra-ui/icon';
 import React from 'react';
 
-const IconButton = ({ size, bgHover, ...props }: any) => (
+const IconButton = ({ size, children, ...props }: any) => (
   <Button
+    {...props}
     padding={0}
     borderRightRadius="full"
     borderLeftRadius="full"
@@ -13,9 +13,6 @@ const IconButton = ({ size, bgHover, ...props }: any) => (
     minWidth={size}
     height={size}
     bg="transparent"
-    _hover={{
-      bg: bgHover || 'gray.100',
-    }}
     _focusVisible={{
       outlineWidth: '1px',
       outlineColor: 'blue.500',
@@ -23,7 +20,7 @@ const IconButton = ({ size, bgHover, ...props }: any) => (
     }}
     _focus={{ outline: 'none' }}
   >
-    <Icon {...props} />
+    {children}
   </Button>
 );
 

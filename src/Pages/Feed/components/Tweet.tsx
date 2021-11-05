@@ -9,7 +9,8 @@ import { GiMoebiusTriangle } from 'react-icons/gi';
 import Icon from '@chakra-ui/icon';
 import IconButton from '../../../components/IconButton';
 import ProfilePic from '../../../components/ProfilePic';
-import TwButton from '../../../components/TwButton';
+import TwitterButton from '../../../components/TwitterButton';
+import TweetButton from './TweetButton';
 
 const Tweet = () => (
   <Stack
@@ -38,12 +39,14 @@ const Tweet = () => (
               <Text fontWeight="bold">Kitten</Text>
               <Text fontWeight="light">@CatLover - 25m</Text>
             </Stack>
-            <IconButton size={7} as={RiMoreFill} />
+            <IconButton>
+              <Icon as={RiMoreFill} size={7} />
+            </IconButton>
 
           </Stack>
           {/* Tweet */}
           <Stack>
-            <Text>
+            <Text lineHeight="20px">
               Incluso si existiera un lobby
               gay internacional que impone el arco iris,
               ¿por qué debería molestarle eso a un liberal?
@@ -56,25 +59,15 @@ const Tweet = () => (
       </Stack>
     </Stack>
     <Stack direction="row" justify="space-evenly" align="center">
-      <Stack direction="row" align="center" spacing={1} color="gray.500" _hover={{ color: 'blue.500' }}>
-        <IconButton size={8} as={FaRegComment} id="comment" color="inherit" bgHover="blue.100" />
-        <Text color="inherit" />
-      </Stack>
-      <Stack direction="row" align="center" spacing={1} color="gray.500" _hover={{ color: 'green.300' }}>
-        <IconButton size={8} as={AiOutlineRetweet} id="retweet" color="inherit" bgHover="green.100" />
-        <Text color="inherit">7</Text>
-      </Stack>
-      <Stack direction="row" align="center" spacing={1} color="gray.500" _hover={{ color: 'red.500' }}>
-        <IconButton size={8} as={IoHeartOutline} id="like" color="inherit" bgHover="red.100" />
-        <Text color="inherit">147</Text>
-      </Stack>
-      <Stack direction="row" align="center" spacing={1} color="gray.500" _hover={{ color: 'blue.500' }}>
-        <IconButton size={8} as={FiShare} id="share" color="inherit" bgHover="blue.100" />
-        <Text color="inherit">70</Text>
-      </Stack>
+
+      <TweetButton size={8} icon={FaRegComment} bgHover="red.700">7</TweetButton>
+      <TweetButton size={8} icon={AiOutlineRetweet}>147</TweetButton>
+      <TweetButton size={8} icon={IoHeartOutline}>70</TweetButton>
+      <TweetButton icon={FiShare} />
+
       <Stack direction="row">
         <Icon as={GiMoebiusTriangle} color="inherit" />
-        <TwButton
+        <TwitterButton
           bg="transparent"
           padding={0}
           height="fit-content"
@@ -94,7 +87,7 @@ const Tweet = () => (
           }}
         >
           <Text color="inherit">Propina</Text>
-        </TwButton>
+        </TwitterButton>
       </Stack>
     </Stack>
   </Stack>

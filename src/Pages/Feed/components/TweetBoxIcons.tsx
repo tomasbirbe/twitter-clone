@@ -13,20 +13,31 @@ import { RiFileGifLine } from 'react-icons/ri';
 
 // Components
 
+import Icon from '@chakra-ui/icon';
 import IconButton from '../../../components/IconButton';
-import TwButton from '../../../components/TwButton';
+import TwitterButton from '../../../components/TwitterButton';
 
 const TweetBoxIcons = () => (
   <Stack direction="row" align="center" justify="space-between" paddingInlineEnd={2} paddingBlockEnd={3}>
     <Stack direction="row" paddingInlineStart={0} spacing={0} justify="flex-start" align="center">
-      <IconButton as={AiOutlinePicture} color="blue.500" boxSize={5} size="35px" />
-      <IconButton as={RiFileGifLine} color="blue.500" boxSize={5} size="35px" />
-      <IconButton as={BiPoll} color="blue.500" boxSize={5} size="35px" />
-      <IconButton as={BsEmojiSmile} color="blue.500" boxSize={5} size="35px" />
-      <IconButton as={BsCalendarDate} color="blue.500" boxSize={5} size="35px" />
+      <IconButton>
+        <Icon as={AiOutlinePicture} color="blue.500" boxSize={5} size="35px" />
+      </IconButton>
+      <IconButton>
+        <Icon as={RiFileGifLine} color="blue.500" boxSize={5} size="35px" />
+      </IconButton>
+      <IconButton>
+        <Icon as={BiPoll} color="blue.500" boxSize={5} size="35px" />
+      </IconButton>
+      <IconButton>
+        <Icon as={BsEmojiSmile} color="blue.500" boxSize={5} size="35px" />
+      </IconButton>
+      <IconButton>
+        <Icon as={BsCalendarDate} color="blue.500" boxSize={5} size="35px" />
+      </IconButton>
     </Stack>
     <Stack>
-      <TwButton color="white" bg="blue.500" height="35px" _hover={{ bg: 'blue.600' }}>Tweet</TwButton>
+      <TwitterButton color="white" bg="blue.500" height="35px" _hover={{ bg: 'blue.600' }}>Tweet</TwitterButton>
     </Stack>
   </Stack>
 

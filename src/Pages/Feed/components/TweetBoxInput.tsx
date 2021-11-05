@@ -2,7 +2,7 @@ import { Stack, Text } from '@chakra-ui/layout';
 import { Textarea, Icon } from '@chakra-ui/react';
 import React, { useRef } from 'react';
 import { IoEarth } from 'react-icons/io5';
-import TwButton from '../../../components/TwButton';
+import TwitterButton from '../../../components/TwitterButton';
 
 const TweetInput = ({ whoCanReplyButton, setWhoCanReplyButton }:any) => {
   const textAreaRef = useRef<any>();
@@ -48,7 +48,7 @@ const TweetInput = ({ whoCanReplyButton, setWhoCanReplyButton }:any) => {
             justify="center"
             width="fit-content"
           >
-            <TwButton
+            <TwitterButton
               bg="transparent"
               height="fit-content"
               paddingBlock={1}
@@ -63,7 +63,7 @@ const TweetInput = ({ whoCanReplyButton, setWhoCanReplyButton }:any) => {
                 <Icon as={IoEarth} boxSize={4} />
                 <Text>Everyone can reply</Text>
               </Stack>
-            </TwButton>
+            </TwitterButton>
           </Stack>
         )
         : ''}

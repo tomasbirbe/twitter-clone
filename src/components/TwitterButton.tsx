@@ -4,7 +4,7 @@ import React from 'react';
 
 import { Button } from '@chakra-ui/button';
 
-const TwButton = ({ ...props }: any) => (
+const TwitterButton = ({ ...props }: any) => (
   <Button
     {...props}
     type="button"
@@ -16,4 +16,4 @@ const TwButton = ({ ...props }: any) => (
   </Button>
 );
 
-export default TwButton;
+export default TwitterButton;
