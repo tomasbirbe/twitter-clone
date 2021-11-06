@@ -3,13 +3,10 @@ import React from 'react';
 
 const IconButton = ({ size, children, ...props }: any) => (
   <Button
-    {...props}
     padding={0}
     borderRightRadius="full"
     borderLeftRadius="full"
-    transition="ease-in-out"
-    transitionProperty="all"
-    transitionDuration="100ms"
+    transition="100ms ease-in-out all"
     minWidth={size}
     height={size}
     bg="transparent"
@@ -19,6 +16,7 @@ const IconButton = ({ size, children, ...props }: any) => (
       outlineOffset: '-1px',
     }}
     _focus={{ outline: 'none' }}
+    {...props}
   >
     {children}
   </Button>
