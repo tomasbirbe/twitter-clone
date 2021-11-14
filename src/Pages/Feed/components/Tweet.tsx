@@ -21,6 +21,7 @@ const Tweet = () => (
     paddingBlock={2}
     cursor="pointer"
     _hover={{ bg: 'gray.50' }}
+    transition="200ms all ease-in-out"
   >
     <Stack direction="row" paddingInlineStart={8}>
       <Icon as={AiOutlineRetweet} color="gray.500" />
