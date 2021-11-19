@@ -137,7 +137,7 @@ const Aside = ({ ...props }:any) => {
               paddingInline={4}
             >
               <Stack direction="row" spacing={3}>
-                <ProfilePic size={12} />
+                <ProfilePic boxSize={12} />
                 <Stack spacing={0}>
                   <Text fontWeight="bold">Tomas Birbe</Text>
                   <Text fontSize={14} color="gray.500">@tomasbirbe</Text>

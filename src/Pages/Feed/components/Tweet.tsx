@@ -48,7 +48,7 @@ const Tweet = ({ tweet }: any) => {
     >
       <Stack direction="row">
         <Stack minWidth="50px">
-          <ProfilePic size={12} />
+          <ProfilePic boxSize={12} />
         </Stack>
         <Stack width="full">
           {/* Tweet */}

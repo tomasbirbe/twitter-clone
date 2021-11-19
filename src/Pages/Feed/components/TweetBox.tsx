@@ -35,7 +35,7 @@ const TweetBox = ({ tweets, setTweets }:any) => {
       spacing={0}
     >
       <Stack width="60px">
-        <ProfilePic size={12} />
+        <ProfilePic boxSize={12} />
       </Stack>
       <Stack width="100%" spacing={whoCanReplyButton ? 3 : 1}>
         <TweetBoxInput

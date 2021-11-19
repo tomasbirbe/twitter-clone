@@ -8,8 +8,8 @@ import Feed from './Pages/Feed/Feed';
 const App = () => (
   <Layout>
     <Switch>
-      <Route exact path="/home" component={Feed} />
-      <Redirect to="/home" />
+      <Route exact path="/" component={Feed} />
+      <Redirect to="/" />
     </Switch>
   </Layout>
 );
