@@ -75,7 +75,7 @@ const Aside = ({ ...props }:any) => {
                       />
                     </IconButton>
                   </Stack>
-                  <Text fontWeight="bold" maxWidth="185px" fontSize={16}>#RicardoFortSigueVivo</Text>
+                  <Text fontWeight="bold" maxWidth="185px" fontSize={16}>#LaRuedaDelTiempo</Text>
                   <Stack>
                     <Text fontSize={12} color="gray.400">4500 Retweets</Text>
                   </Stack>
@@ -139,8 +139,8 @@ const Aside = ({ ...props }:any) => {
               <Stack direction="row" spacing={3}>
                 <ProfilePic size={12} />
                 <Stack spacing={0}>
-                  <Text fontWeight="bold">Christian Cibelli</Text>
-                  <Text fontSize={14} color="gray.500">@chcibelli</Text>
+                  <Text fontWeight="bold">Tomas Birbe</Text>
+                  <Text fontSize={14} color="gray.500">@tomasbirbe</Text>
                 </Stack>
               </Stack>
               <TwitterButton
