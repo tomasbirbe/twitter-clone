@@ -45,63 +45,70 @@ const Aside = ({ ...props }:any) => {
           <Text paddingInlineStart={4} fontSize={20} fontWeight="bold">What's happening</Text>
           <Stack>
             <Stack as="ul">
-              <Stack
-                as="li"
-                spacing={0}
-                paddingBlock={4}
-                paddingInline={4}
-                transition="200ms all ease-in-out"
-                _hover={{ bg: 'gray.100' }}
-                cursor="pointer"
-              >
-                {/* Hashtag */}
-                <Stack direction="row" align="center" height="15px" justify="space-between">
-                  <Text fontSize={12} color="gray.400">Trending in argentina</Text>
-                  <IconButton
-                    size="30px"
-                    onMouseEnter={() => setColorOnHover('blue.400')}
-                    onMouseLeave={() => setColorOnHover('')}
-                    _hover={{ bg: 'blue.100' }}
-                    transition="100ms ease-in-out all"
-                  >
-                    <Icon
-                      as={RiMoreFill}
-                      boxSize={5}
-                      transitionProperty="all"
-                      transitionDuration="200ms"
-                      color={colorOnHover}
-                    />
-                  </IconButton>
+              <Stack as="li">
+                <Stack
+                  as="a"
+                  tabIndex={0}
+                  spacing={0}
+                  paddingBlock={4}
+                  paddingInline={4}
+                  transition="200ms all ease-in-out"
+                  _hover={{ bg: 'gray.100' }}
+                  cursor="pointer"
+                >
+                  {/* Hashtag */}
+                  <Stack direction="row" align="center" height="15px" justify="space-between" width="full">
+                    <Text fontSize={12} color="gray.400">Trending in argentina</Text>
+                    <IconButton
+                      size="30px"
+                      onMouseEnter={() => setColorOnHover('blue.400')}
+                      onMouseLeave={() => setColorOnHover('')}
+                      _hover={{ bg: 'blue.100' }}
+                      transition="100ms ease-in-out all"
+                    >
+                      <Icon
+                        as={RiMoreFill}
+                        boxSize={5}
+                        transitionProperty="all"
+                        transitionDuration="200ms"
+                        color={colorOnHover}
+                      />
+                    </IconButton>
+                  </Stack>
+                  <Text fontWeight="bold" maxWidth="185px" fontSize={16}>#RicardoFortSigueVivo</Text>
+                  <Stack>
+                    <Text fontSize={12} color="gray.400">4500 Retweets</Text>
+                  </Stack>
+                  <Stack />
                 </Stack>
-                <Text fontWeight="bold" fontSize={16}>#RicardoFortSigueVivo</Text>
-                <Stack>
-                  <Text fontSize={12} color="gray.400">4500 Retweets</Text>
-                </Stack>
-                <Stack />
               </Stack>
               {/* News */}
-              <Stack
-                as="li"
-                direction="row"
-                spacing={3}
-                paddingBlock={3}
-                paddingInline={4}
-                transition="200ms all ease-in-out"
-                _hover={{ bg: 'gray.100' }}
-                cursor="pointer"
-              >
-                <Stack spacing={0}>
-                  <Text fontSize={12} color="gray.400">News - Yesterday</Text>
-                  <Text fontWeight="bold" fontSize={16}>Eight people dead and multiple injured at Travis Scott's Astroworld Festival in Houston</Text>
+              <Stack as="li" maxWidth="300px">
+                <Stack
+                  as="a"
+                  tabIndex={0}
+                  direction="row"
+                  spacing={3}
+                  paddingBlock={3}
+                  paddingInline={4}
+                  transition="200ms all ease-in-out"
+                  _hover={{ bg: 'gray.100' }}
+                  cursor="pointer"
+                >
+                  <Stack spacing={0} alignItems="flex-start" wrap="wrap">
+                    <Text fontSize={12} color="gray.400">News - Yesterday</Text>
+                    <Text fontWeight="bold" fontSize={16} textAlign="left" maxWidth="185px">Et people dead and multiple injured at Travis Scott's Astroworld Festival in Houston</Text>
+                  </Stack>
+                  <Stack minWidth="70px">
+                    <Image
+                      src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIF.EmvDg4jkLfm4GdmGejuoKQ%26pid%3DApi&f=1"
+                      fit="cover"
+                      boxSize="70px"
+                      borderRadius="15px"
+                    />
+                  </Stack>
                 </Stack>
-                <Stack minWidth="70px">
-                  <Image
-                    src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIF.EmvDg4jkLfm4GdmGejuoKQ%26pid%3DApi&f=1"
-                    fit="cover"
-                    boxSize="70px"
-                    borderRadius="15px"
-                  />
-                </Stack>
+
               </Stack>
             </Stack>
           </Stack>
@@ -117,35 +124,38 @@ const Aside = ({ ...props }:any) => {
       <Stack bg="gray.50" borderRadius="15px" paddingBlockStart={3}>
         <Text paddingInlineStart={4} fontSize={20} fontWeight="bold">Who to follow</Text>
         <Stack as="ul">
-          <Stack
-            as="li"
-            direction="row"
-            transition="200ms all ease-in-out"
-            cursor="pointer"
-            _hover={{ bg: 'gray.100' }}
-            justify="space-between"
-            paddingBlock={4}
-            paddingInline={4}
-          >
-            <Stack direction="row" spacing={3}>
-              <ProfilePic size={12} />
-              <Stack spacing={0}>
-                <Text fontWeight="bold">Christian Cibelli</Text>
-                <Text fontSize={14} color="gray.500">@chcibelli</Text>
-              </Stack>
-            </Stack>
-            <TwitterButton
-              width="fit-content"
-              bg="black"
-              color="white"
+          <Stack as="li">
+            <Stack
+              as="a"
+              tabIndex={0}
+              direction="row"
               transition="200ms all ease-in-out"
-              _hover={{ bg: 'gray.800' }}
-              paddingBlock={2}
-              height="fit-content"
+              cursor="pointer"
+              _hover={{ bg: 'gray.100' }}
+              justify="space-between"
+              paddingBlock={4}
+              paddingInline={4}
             >
-              Follow
+              <Stack direction="row" spacing={3}>
+                <ProfilePic size={12} />
+                <Stack spacing={0}>
+                  <Text fontWeight="bold">Christian Cibelli</Text>
+                  <Text fontSize={14} color="gray.500">@chcibelli</Text>
+                </Stack>
+              </Stack>
+              <TwitterButton
+                width="fit-content"
+                bg="black"
+                color="white"
+                transition="200ms all ease-in-out"
+                _hover={{ bg: 'gray.800' }}
+                paddingBlock={2}
+                height="fit-content"
+              >
+                Follow
 
-            </TwitterButton>
+              </TwitterButton>
+            </Stack>
           </Stack>
         </Stack>
         <Button width="100%" bg="gray.50" borderBottomRadius="15px" paddingBlock={7}>

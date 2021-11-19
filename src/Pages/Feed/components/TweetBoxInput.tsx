@@ -4,11 +4,17 @@ import React, { useRef } from 'react';
 import { IoEarth } from 'react-icons/io5';
 import TwitterButton from '../../../components/TwitterButton';
 
-const TweetInput = ({ whoCanReplyButton, setWhoCanReplyButton }:any) => {
+const TweetInput = ({
+  whoCanReplyButton, setWhoCanReplyButton, input, setInput,
+}:any) => {
   const textAreaRef = useRef<any>();
 
   const showButton = () => {
     setWhoCanReplyButton(true);
+  };
+
+  const handleInput = (e: any) => {
+    setInput(e.target.value);
   };
 
   const autoGrow = () => {
@@ -25,6 +31,8 @@ const TweetInput = ({ whoCanReplyButton, setWhoCanReplyButton }:any) => {
     >
       <Stack direction="row" align="center" justify="center">
         <Textarea
+          onChange={handleInput}
+          value={input}
           border={0}
           paddingInline={2}
           paddingBlockStart={3}

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 // Chakra-ui
 
@@ -10,21 +10,20 @@ import TweetBox from './components/TweetBox';
 import FeedHeader from './components/FeedHeader';
 import Tweet from './components/Tweet';
 
-const Feed = () => (
-  <>
-    <FeedHeader />
-    <Stack as="section" spacing={0}>
-      <TweetBox />
-      <Tweet />
-      <Tweet />
-      <Tweet />
-      <Tweet />
-      <Tweet />
-      <Tweet />
-      <Tweet />
-      <Tweet />
-    </Stack>
-  </>
-);
+const Feed = () => {
+  const [tweets, setTweets] = useState([]);
+
+  return (
+    <>
+      <FeedHeader />
+      <Stack as="section" spacing={0}>
+        <TweetBox tweets={tweets} setTweets={setTweets} />
+        {
+          tweets ? tweets.map((tweet) => <Tweet key={Math.random() * 10000} tweet={tweet} />) : ''
+        }
+      </Stack>
+    </>
+  );
+};
 
 export default Feed;

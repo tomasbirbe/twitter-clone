@@ -28,8 +28,6 @@ const Nav = ({ ...props }: any) => (
   <Stack
     {...props}
     as="nav"
-    borderInlineEnd="1px"
-    borderColor="gray.100"
     height="100%"
     justifyContent="space-between"
     paddingBlock={1}
