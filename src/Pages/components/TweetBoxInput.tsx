@@ -5,8 +5,11 @@ import { IoEarth } from 'react-icons/io5';
 import TwitterButton from '../../components/TwitterButton';
 
 const TweetInput = ({
-  whoCanReplyButton, setWhoCanReplyButton, input, setInput,
-}:any) => {
+  whoCanReplyButton,
+  setWhoCanReplyButton,
+  input,
+  setInput,
+}: any) => {
   const textAreaRef = useRef<any>();
 
   const showButton = () => {
@@ -48,33 +51,39 @@ const TweetInput = ({
           onClick={showButton}
         />
       </Stack>
-      {whoCanReplyButton
-        ? (
-          <Stack
-            direction="row"
-            align="center"
-            justify="center"
-            width="fit-content"
+      {whoCanReplyButton ? (
+        <Stack
+          direction="row"
+          align="center"
+          justify="center"
+          width="fit-content"
+        >
+          <TwitterButton
+            bg="transparent"
+            height="fit-content"
+            paddingBlock={1}
+            paddingInline={3}
+            color="blue.500"
+            fontSize={14}
+            _hover={{
+              bg: 'gray.100',
+            }}
           >
-            <TwitterButton
-              bg="transparent"
-              height="fit-content"
-              paddingBlock={1}
-              paddingInline={3}
-              color="blue.500"
-              fontSize={14}
-              _hover={{
-                bg: 'gray.100',
-              }}
+            <Stack
+              direction="row"
+              justify="flex-start"
+              align="center"
+              width="100%"
+              spacing={1}
             >
-              <Stack direction="row" justify="flex-start" align="center" width="100%" spacing={1}>
-                <Icon as={IoEarth} boxSize={4} />
-                <Text>Everyone can reply</Text>
-              </Stack>
-            </TwitterButton>
-          </Stack>
-        )
-        : ''}
+              <Icon as={IoEarth} boxSize={4} />
+              <Text>Everyone can reply</Text>
+            </Stack>
+          </TwitterButton>
+        </Stack>
+      ) : (
+        ''
+      )}
     </Stack>
   );
 };

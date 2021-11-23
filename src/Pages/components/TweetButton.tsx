@@ -3,9 +3,7 @@ import { Stack, Text } from '@chakra-ui/layout';
 import React from 'react';
 import IconButton from '../../components/IconButton';
 
-const TweetButton = ({
-  icon, size, children, ...props
-}:any) => (
+const TweetButton = ({ icon, size, children, ...props }: any) => (
   <Stack direction="row" align="center" spacing={1}>
     <IconButton {...props}>
       <Icon as={icon} size={size} />

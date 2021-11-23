@@ -17,8 +17,6 @@ const Feed = () => {
 
   const [isMd] = useMediaQuery(`(min-width:${breakpoints.md})`);
 
-  console.log(isMd);
-
   return (
     <>
       <FeedHeader />
