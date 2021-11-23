@@ -1,6 +1,11 @@
 import { extendTheme } from '@chakra-ui/react';
+import { createBreakpoints } from '@chakra-ui/theme-tools';
+import breakpoints from './breakpoints';
+
+const newBreakpoints = createBreakpoints(breakpoints);
 
 const theme = extendTheme({
+  breakpoints: newBreakpoints,
   styles: {
     global: {
       '*': {
@@ -13,6 +18,10 @@ const theme = extendTheme({
         listStyleType: 'none',
       },
     },
+  },
+  container: {
+    ...breakpoints,
+    md: '200px',
   },
 });
 

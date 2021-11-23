@@ -26,7 +26,7 @@ const HomeButton = () => (
       }}
     >
       <Box
-        padding={3}
+        padding={{ md: 3, xl: 2 }}
         borderRightRadius="full"
         borderLeftRadius="full"
         transition="ease-in-out"

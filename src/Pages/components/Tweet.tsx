@@ -7,15 +7,15 @@ import { RiMoreFill } from 'react-icons/ri';
 import { FiShare } from 'react-icons/fi';
 import { GiMoebiusTriangle } from 'react-icons/gi';
 import Icon from '@chakra-ui/icon';
-import IconButton from '../../../components/IconButton';
-import ProfilePic from '../../../components/ProfilePic';
-import TwitterButton from '../../../components/TwitterButton';
+import IconButton from '../../components/IconButton';
+import ProfilePic from '../../components/ProfilePic';
+import TwitterButton from '../../components/TwitterButton';
 import TweetButton from './TweetButton';
 
 interface impressions {
-  likes: number,
-  comments: number,
-  retweets: number,
+  likes: number;
+  comments: number;
+  retweets: number;
 }
 
 const Tweet = ({ tweet }: any) => {
@@ -54,7 +54,12 @@ const Tweet = ({ tweet }: any) => {
           {/* Tweet */}
           <Stack justify="center" aling="flex-start" spacing={-2}>
             {/* Author and config */}
-            <Stack direction="row" justify="space-between" align="flex-start" width="full">
+            <Stack
+              direction="row"
+              justify="space-between"
+              align="flex-start"
+              width="full"
+            >
               <Stack direction="row" paddingBlockEnd={2}>
                 <Text fontWeight="bold">Kitten</Text>
                 <Text fontWeight="light">@CatLover - 25m</Text>
@@ -62,19 +67,15 @@ const Tweet = ({ tweet }: any) => {
               <IconButton size="25px">
                 <Icon as={RiMoreFill} />
               </IconButton>
-
             </Stack>
             {/* Tweet */}
             <Stack>
-              <Text lineHeight="20px">
-                {tweet}
-              </Text>
+              <Text lineHeight="20px">{tweet}</Text>
             </Stack>
           </Stack>
         </Stack>
       </Stack>
       <Stack direction="row" justify="space-evenly" align="center">
-
         <TweetButton onClick={addComment} size={8} icon={FaRegComment}>
           {impressions.comments}
         </TweetButton>

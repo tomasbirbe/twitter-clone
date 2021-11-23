@@ -10,17 +10,15 @@ import IconButton from '../../components/IconButton';
 import ProfilePic from '../../components/ProfilePic';
 import TwitterButton from '../../components/TwitterButton';
 
-const Aside = ({ ...props }:any) => {
+const Aside = ({ ...props }: any) => {
   const [colorOnHover, setColorOnHover] = useState('');
 
   return (
     <Stack
       {...props}
       as="aside"
-      borderInlineStart="1px"
-      borderColor="gray.100"
       paddingBlockStart={1}
-      paddingInlineStart={5}
+      paddingInlineStart={7}
       spacing={4}
     >
       {/* Header */}
@@ -36,13 +34,21 @@ const Aside = ({ ...props }:any) => {
         <Stack align="center" justify="center">
           <Icon as={FiSearch} boxSize={5} />
         </Stack>
-        <Input placeholder="Search Twitter" borderRadius="full" border="none" _focus={{}} _hover={{}} />
+        <Input
+          placeholder="Search Twitter"
+          borderRadius="full"
+          border="none"
+          _focus={{}}
+          _hover={{}}
+        />
       </Stack>
 
       {/* Content: What's happening */}
       <Stack bg="gray.50" paddingBlockStart={3} borderRadius="15px" spacing={0}>
         <Stack spacing={2}>
-          <Text paddingInlineStart={4} fontSize={20} fontWeight="bold">What's happening</Text>
+          <Text paddingInlineStart={4} fontSize={20} fontWeight="bold">
+            What's happening
+          </Text>
           <Stack>
             <Stack as="ul">
               <Stack as="li">
@@ -57,8 +63,16 @@ const Aside = ({ ...props }:any) => {
                   cursor="pointer"
                 >
                   {/* Hashtag */}
-                  <Stack direction="row" align="center" height="15px" justify="space-between" width="full">
-                    <Text fontSize={12} color="gray.400">Trending in argentina</Text>
+                  <Stack
+                    direction="row"
+                    align="center"
+                    height="15px"
+                    justify="space-between"
+                    width="full"
+                  >
+                    <Text fontSize={12} color="gray.400">
+                      Trending in argentina
+                    </Text>
                     <IconButton
                       size="30px"
                       onMouseEnter={() => setColorOnHover('blue.400')}
@@ -75,9 +89,13 @@ const Aside = ({ ...props }:any) => {
                       />
                     </IconButton>
                   </Stack>
-                  <Text fontWeight="bold" maxWidth="185px" fontSize={16}>#LaRuedaDelTiempo</Text>
+                  <Text fontWeight="bold" maxWidth="185px" fontSize={16}>
+                    #LaRuedaDelTiempo
+                  </Text>
                   <Stack>
-                    <Text fontSize={12} color="gray.400">4500 Retweets</Text>
+                    <Text fontSize={12} color="gray.400">
+                      4500 Retweets
+                    </Text>
                   </Stack>
                   <Stack />
                 </Stack>
@@ -96,8 +114,18 @@ const Aside = ({ ...props }:any) => {
                   cursor="pointer"
                 >
                   <Stack spacing={0} alignItems="flex-start" wrap="wrap">
-                    <Text fontSize={12} color="gray.400">News - Yesterday</Text>
-                    <Text fontWeight="bold" fontSize={16} textAlign="left" maxWidth="185px">Et people dead and multiple injured at Travis Scott's Astroworld Festival in Houston</Text>
+                    <Text fontSize={12} color="gray.400">
+                      News - Yesterday
+                    </Text>
+                    <Text
+                      fontWeight="bold"
+                      fontSize={16}
+                      textAlign="left"
+                      maxWidth="185px"
+                    >
+                      Et people dead and multiple injured at Travis Scott's
+                      Astroworld Festival in Houston
+                    </Text>
                   </Stack>
                   <Stack minWidth="70px">
                     <Image
@@ -108,12 +136,16 @@ const Aside = ({ ...props }:any) => {
                     />
                   </Stack>
                 </Stack>
-
               </Stack>
             </Stack>
           </Stack>
         </Stack>
-        <Button width="100%" bg="gray.50" borderBottomRadius="15px" paddingBlock={7}>
+        <Button
+          width="100%"
+          bg="gray.50"
+          borderBottomRadius="15px"
+          paddingBlock={7}
+        >
           <Stack direction="row" justify="flex-start" width="100%">
             <Text color="blue.300">Show more</Text>
           </Stack>
@@ -122,7 +154,9 @@ const Aside = ({ ...props }:any) => {
 
       {/* Content: Who to follow */}
       <Stack bg="gray.50" borderRadius="15px" paddingBlockStart={3}>
-        <Text paddingInlineStart={4} fontSize={20} fontWeight="bold">Who to follow</Text>
+        <Text paddingInlineStart={4} fontSize={20} fontWeight="bold">
+          Who to follow
+        </Text>
         <Stack as="ul">
           <Stack as="li">
             <Stack
@@ -140,7 +174,9 @@ const Aside = ({ ...props }:any) => {
                 <ProfilePic boxSize={12} />
                 <Stack spacing={0}>
                   <Text fontWeight="bold">Tomas Birbe</Text>
-                  <Text fontSize={14} color="gray.500">@tomasbirbe</Text>
+                  <Text fontSize={14} color="gray.500">
+                    @tomasbirbe
+                  </Text>
                 </Stack>
               </Stack>
               <TwitterButton
@@ -153,12 +189,16 @@ const Aside = ({ ...props }:any) => {
                 height="fit-content"
               >
                 Follow
-
               </TwitterButton>
             </Stack>
           </Stack>
         </Stack>
-        <Button width="100%" bg="gray.50" borderBottomRadius="15px" paddingBlock={7}>
+        <Button
+          width="100%"
+          bg="gray.50"
+          borderBottomRadius="15px"
+          paddingBlock={7}
+        >
           <Stack direction="row" justify="flex-start" width="100%">
             <Text color="blue.300">Show more</Text>
           </Stack>

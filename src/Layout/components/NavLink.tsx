@@ -6,9 +6,10 @@ import { Link } from 'react-router-dom';
 import Icon from '@chakra-ui/icon';
 import { Box, Stack, Text } from '@chakra-ui/layout';
 import { useMediaQuery } from '@chakra-ui/media-query';
+import breakpoints from '../../breakpoints';
 
-const NavLink = ({ icon, text } : {icon:any, text:String}) => {
-  const [isLarge] = useMediaQuery('(min-width:1280px)');
+const NavLink = ({ icon, text }: { icon: any; text: String }) => {
+  const [isLg] = useMediaQuery(`(min-width: ${breakpoints.xl})`);
 
   return (
     <li>
@@ -26,25 +27,25 @@ const NavLink = ({ icon, text } : {icon:any, text:String}) => {
       >
         <Stack
           direction="row"
-          spacing={4}
+          spacing={5}
           align="center"
           justify="space-around"
           paddingBlock={2}
-          paddingInlineStart={3}
-          paddingInlineEnd={6}
+          paddingInlineStart={{ xl: 2, md: 0 }}
+          paddingInlineEnd={{ xl: 6, md: 0 }}
           borderRightRadius="full"
           borderLeftRadius="full"
           transition="ease-in-out"
           transitionProperty="all"
           transitionDuration="150ms"
+          minWidth="50px"
+          minHeight="50px"
           _hover={{
             bg: 'gray.200',
           }}
         >
-          <Icon as={icon} boxSize={8} />
-          {isLarge
-            ? <Text fontSize={21}>{text}</Text>
-            : ''}
+          <Icon as={icon} boxSize={7} />
+          {isLg ? <Text fontSize={20}>{text}</Text> : ''}
         </Stack>
       </Box>
     </li>

@@ -13,5 +13,5 @@ ReactDOM.render(
       </ChakraProvider>
     </Router>
   </React.StrictMode>,
-  document.getElementById('root'),
+  document.getElementById('root')
 );
