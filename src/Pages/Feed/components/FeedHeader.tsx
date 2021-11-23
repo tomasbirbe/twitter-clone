@@ -11,10 +11,10 @@ import { HiOutlineSparkles } from 'react-icons/hi';
 // Components
 
 import Icon from '@chakra-ui/icon';
-import IconButton from '../../components/IconButton';
-import ProfilePic from '../../components/ProfilePic';
+import IconButton from '../../../components/IconButton';
+import ProfilePic from '../../../components/ProfilePic';
 import { useMediaQuery } from '@chakra-ui/media-query';
-import breakpoints from '../../breakpoints';
+import breakpoints from '../../../breakpoints';
 
 const FeedHeader = () => {
   const [isMd] = useMediaQuery(`(min-width: ${breakpoints.md})`);

@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 
 // Chakra-ui
 
 import { Stack, Icon } from '@chakra-ui/react';
+import { useMediaQuery } from '@chakra-ui/media-query';
 
 // Icons
 import { AiOutlinePicture } from 'react-icons/ai';
@@ -13,13 +14,19 @@ import { BsCalendarDate, BsEmojiSmile } from 'react-icons/bs';
 // Components
 
 import TweetBoxInput from './TweetBoxInput';
-import ProfilePic from '../../components/ProfilePic';
-import IconButton from '../../components/IconButton';
-import TwitterButton from '../../components/TwitterButton';
+import ProfilePic from '../../../components/ProfilePic';
+import IconButton from '../../../components/IconButton';
+import TwitterButton from '../../../components/TwitterButton';
+import TweetsContext from '../../../tweetContext';
+import breakpoints from '../../../breakpoints';
+import { useHistory } from 'react-router';
 
-const TweetBox = ({ tweets, setTweets }: any) => {
+const TweetBox = ({ input, setInput }: any) => {
   const [whoCanReplyButton, setWhoCanReplyButton] = useState(false);
-  const [input, setInput] = useState('');
+  const [tweets, setTweets] = useContext(TweetsContext);
+
+  const [isMd] = useMediaQuery(`(min-width: ${breakpoints.md})`);
+  const history = useHistory();
 
   const addTweet = () => {
     if (input.trim() !== '') {
@@ -39,9 +46,9 @@ const TweetBox = ({ tweets, setTweets }: any) => {
       <Stack width="60px">
         <ProfilePic boxSize={12} />
       </Stack>
-      <Stack width="100%" spacing={whoCanReplyButton ? 3 : 1}>
+      <Stack width="100%" spacing={3}>
         <TweetBoxInput
-          whoCanReplyButton={whoCanReplyButton}
+          whoCanReplyButton={isMd ? whoCanReplyButton : true}
           setWhoCanReplyButton={setWhoCanReplyButton}
           input={input}
           setInput={setInput}
@@ -82,14 +89,19 @@ const TweetBox = ({ tweets, setTweets }: any) => {
             <IconButton>
               <Icon as={BiPoll} color="blue.500" boxSize={5} size="35px" />
             </IconButton>
-            <IconButton>
-              <Icon
-                as={BsEmojiSmile}
-                color="blue.500"
-                boxSize={5}
-                size="35px"
-              />
-            </IconButton>
+            {isMd ? (
+              <IconButton>
+                <Icon
+                  as={BsEmojiSmile}
+                  color="blue.500"
+                  boxSize={5}
+                  size="35px"
+                />
+              </IconButton>
+            ) : (
+              ''
+            )}
+
             <IconButton>
               <Icon
                 as={BsCalendarDate}
@@ -99,18 +111,22 @@ const TweetBox = ({ tweets, setTweets }: any) => {
               />
             </IconButton>
           </Stack>
-          <Stack>
-            <TwitterButton
-              onClick={addTweet}
-              type="submit"
-              color="white"
-              bg="blue.500"
-              height="35px"
-              _hover={{ bg: 'blue.600' }}
-            >
-              Tweet
-            </TwitterButton>
-          </Stack>
+          {isMd ? (
+            <Stack>
+              <TwitterButton
+                onClick={addTweet}
+                type="submit"
+                color="white"
+                bg="blue.500"
+                height="35px"
+                _hover={{ bg: 'blue.600' }}
+              >
+                Tweet
+              </TwitterButton>
+            </Stack>
+          ) : (
+            ''
+          )}
         </Stack>
       </Stack>
     </Stack>
