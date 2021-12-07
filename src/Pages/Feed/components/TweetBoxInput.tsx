@@ -2,7 +2,7 @@ import { Stack, Text } from '@chakra-ui/layout';
 import { Textarea, Icon } from '@chakra-ui/react';
 import React, { useRef } from 'react';
 import { IoEarth } from 'react-icons/io5';
-import TwitterButton from '../../components/TwitterButton';
+import TwitterButton from '../../../components/TwitterButton';
 
 const TweetInput = ({
   whoCanReplyButton,

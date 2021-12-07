@@ -17,10 +17,11 @@ module.exports = {
     'prettier/prettier': [
       'error',
       {
-        singleQuote: true,
+        tabWidth: 2,
         semi: true,
+        singleQuote: true,
+        endOfLine: 'lf',
       },
     ],
-    'react/no-unescaped-entities': 'off',
   },
 };

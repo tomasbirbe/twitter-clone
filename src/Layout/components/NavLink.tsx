@@ -16,6 +16,7 @@ const NavLink = ({ icon, text }: { icon: any; text: String }) => {
       <Box
         as={Link}
         to="/"
+        bg="white"
         borderRightRadius="full"
         borderLeftRadius="full"
         transitionProperty="all"

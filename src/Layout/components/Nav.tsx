@@ -35,7 +35,6 @@ import IconButton from '../../components/IconButton';
 const Nav = ({ ...props }: any) => {
   const [isXl] = useMediaQuery(`(min-width: ${breakpoints.xl})`);
   const [isLg] = useMediaQuery(`(min-width: ${breakpoints.lg})`);
-  const [isMd] = useMediaQuery(`(min-width: ${breakpoints.md})`);
   const [isShort] = useMediaQuery(`(min-height: 700px)`);
 
   return (
@@ -65,16 +64,17 @@ const Nav = ({ ...props }: any) => {
         <NavLink icon={HiOutlineBell} text="Notifications" />
         <NavLink icon={HiOutlineMail} text="Messages" />
         {isShort ? <NavLink icon={HiOutlineBookmark} text="Bookmarks" /> : ''}
-        <NavLink icon={HiOutlineMenuAlt2} text="Lists" />
+        {isShort ? <NavLink icon={HiOutlineMenuAlt2} text=" Lists" /> : ''}
         <NavLink icon={HiOutlineUser} text="Profile" />
         <NavLink icon={HiOutlineDotsCircleHorizontal} text="More" />
-        <Stack width="100%" paddingBlockStart={2} align="center">
+        <Stack width="100%" paddingBlockStart={{xl:4}} paddingInlineEnd={{xl:9}} align="center">
           {isXl ? (
             <TwitterButton
               fontSize={18}
               color="white"
               bg="blue.500"
-              paddingBlock={7}
+              width="225px"
+              height="52px"
               _hover={{
                 bg: 'blue.600',
               }}
@@ -89,7 +89,7 @@ const Nav = ({ ...props }: any) => {
         </Stack>
       </Stack>
 
-      <Stack align="center" justify="center" paddingBlockEnd={{ md: 4, xl: 2 }}>
+      <Stack align="center" justify="center" paddingBlockEnd={{ md: 4, xl: 2 }} paddingInlineEnd={{xl:4}} >
         {isXl ? (
           <Button
             borderRadius="full"

@@ -7,10 +7,12 @@ import { RiMoreFill } from 'react-icons/ri';
 import { FiShare } from 'react-icons/fi';
 import { GiMoebiusTriangle } from 'react-icons/gi';
 import Icon from '@chakra-ui/icon';
-import IconButton from '../../components/IconButton';
-import ProfilePic from '../../components/ProfilePic';
-import TwitterButton from '../../components/TwitterButton';
+import IconButton from '../../../components/IconButton';
+import ProfilePic from '../../../components/ProfilePic';
+import TwitterButton from '../../../components/TwitterButton';
 import TweetButton from './TweetButton';
+import breakpoints from '../../../breakpoints';
+import { useMediaQuery } from '@chakra-ui/media-query';
 
 interface impressions {
   likes: number;
@@ -19,6 +21,8 @@ interface impressions {
 }
 
 const Tweet = ({ tweet }: any) => {
+  const [isMd] = useMediaQuery(`(min-width: ${breakpoints.md})`);
+
   const [impressions, setImpressions] = useState<impressions>({
     likes: 1,
     comments: 1,
@@ -89,31 +93,34 @@ const Tweet = ({ tweet }: any) => {
         </TweetButton>
 
         <TweetButton icon={FiShare} />
-
-        <Stack direction="row">
-          <Icon as={GiMoebiusTriangle} color="inherit" />
-          <TwitterButton
-            bg="transparent"
-            padding={0}
-            height="fit-content"
-            outline="none"
-            border="none"
-            color="gray.500"
-            _focus={{
-              outline: 'none',
-              bg: 'transparent',
-            }}
-            _hover={{
-              bg: 'transparent',
-              color: 'blue.500',
-            }}
-            _active={{
-              bg: 'transparent',
-            }}
-          >
-            <Text color="inherit">Propina</Text>
-          </TwitterButton>
-        </Stack>
+        {isMd ? (
+          <Stack direction="row">
+            <Icon as={GiMoebiusTriangle} color="inherit" />
+            <TwitterButton
+              bg="transparent"
+              padding={0}
+              height="fit-content"
+              outline="none"
+              border="none"
+              color="gray.500"
+              _focus={{
+                outline: 'none',
+                bg: 'transparent',
+              }}
+              _hover={{
+                bg: 'transparent',
+                color: 'blue.500',
+              }}
+              _active={{
+                bg: 'transparent',
+              }}
+            >
+              <Text color="inherit">Propina</Text>
+            </TwitterButton>
+          </Stack>
+        ) : (
+          ''
+        )}
       </Stack>
     </Stack>
   );
